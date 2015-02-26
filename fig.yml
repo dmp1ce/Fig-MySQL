@@ -1,0 +1,14 @@
+mysql:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_USER: user
+    MYSQL_PASSWORD: password
+    MYSQL_DATABASE: database
+mysqlClient:
+  image: mariadb
+  links:
+    - mysql
+  volumes:
+    - workspace:/workspace
+  command: bash -c set
